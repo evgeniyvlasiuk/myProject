@@ -8,6 +8,7 @@ html {
 body {
   padding-top: 60px;
   background: #730E15;
+  color: #d2d2d2;
 }
 
 section {
@@ -45,7 +46,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999;
+  color: #d8d8d8;
 }
 
 p {
@@ -76,16 +77,16 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #999;
+  border-top: 1px solid #2f1100;
+  color: #ededed;
 }
 
 footer a {
-  color: #555;
+  color: #dadada;
 }
 
 footer a:hover {
-  color: #222;
+  color: #b0b0b0;
 }
 
 footer small {
@@ -100,4 +101,18 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 10px;
+}
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
 }
