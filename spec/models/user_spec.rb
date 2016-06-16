@@ -15,6 +15,7 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token)}
 
   it { should be_valid }
 
@@ -23,7 +24,7 @@ describe User do
     it { should be_invalid }
   end
 
-  describe "return value of authenticate method" do
+   describe "return value of authenticate method" do
     before { @user.save }
     let(:found_user) { User.find_by(email: @user.email) }
 
@@ -39,17 +40,17 @@ describe User do
     end
   end
 
-  describe "when name is not present" do
+   describe "when name is not present" do
     before { @user.name = " " }
     it { should_not be_valid }
   end
 
-  describe "when name is too long" do
+   describe "when name is too long" do
     before { @user.name = "a" * 51 }
     it { should_not be_valid }
   end
 
-  describe "when password is not present" do
+   describe "when password is not present" do
   before { @user.password = @user.password_confirmation = " " }
   it { should_not be_valid }
   end
@@ -75,7 +76,6 @@ describe User do
     end
   end
 
-
   describe "when email format is valid" do
     it "should be valid" do
       addresses = %w[users@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
@@ -94,6 +94,11 @@ describe User do
     end
 
     it { should_not be_valid }
+  end
+
+  describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank}
   end
 
 end

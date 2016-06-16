@@ -7,8 +7,8 @@ html {
 
 body {
   padding-top: 60px;
-  background: #730E15;
-  color: #d2d2d2;
+  background: #dbce9d;
+  color: #676767;
 }
 
 section {
@@ -46,7 +46,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #d8d8d8;
+  color: #625f61;
 }
 
 p {
@@ -59,7 +59,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #dbce9d;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -71,22 +71,26 @@ p {
   color: #fff;
   text-decoration: none;
 }
-
+#imgHome{
+  width: 310px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* footer */
 
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #2f1100;
-  color: #ededed;
+  color: #595959;
 }
 
 footer a {
-  color: #dadada;
+  color: #3a373a;
 }
 
 footer a:hover {
-  color: #b0b0b0;
+  color: #8b8b8b;
 }
 
 footer small {
