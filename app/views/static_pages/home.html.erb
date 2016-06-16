@@ -1,11 +1,25 @@
-<div class="center hero-unit">
-<% provide(:title, 'Home') %>
-	<h1>Welcome to PROJECT #24</h1>
-	<h2>
-    Will be cool
-	</h2>
-	<%= link_to "Sign up now!", 'signup', class: "btn btn-large btn-primary" %>
-</div>
-<div id="imgHome">
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
-</div>
+<% if signed_in? %>
+    <div class="row">
+      <aside class="span4">
+        <section>
+          <%= render 'shared/user_info' %>
+        </section>
+        <section>
+          <%= render 'shared/micropost_form' %>
+        </section>
+      </aside>
+    </div>
+<% else %>
+    <div class="center hero-unit">
+      <h1>Welcome to the Project #24</h1>
+
+      <h2>
+        MAKE YOU PROJECT #
+      </h2>
+
+      <%= link_to "Sign up now!", signup_path,
+                  class: "btn btn-large btn-primary btn-inverse" %>
+    </div>
+
+    <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+<% end %>
